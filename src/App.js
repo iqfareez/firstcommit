@@ -8,6 +8,7 @@ import Combobox from "./components/Combobox";
 import CommitCard from "./components/CommitCard";
 import CommitSkeleton from "./components/CommitCard/CommitSkeleton";
 import Footer from "./components/Footer";
+import { inject } from '@vercel/analytics';
 
 const App = () => {
   const queryParams = new URLSearchParams(window.location.search);
@@ -37,6 +38,8 @@ const App = () => {
 
     setLoading(false);
   };
+
+  inject();
 
   return (
     <>
